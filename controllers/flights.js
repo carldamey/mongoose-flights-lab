@@ -2,6 +2,7 @@ var Flight = require("../models/flight")
 
 module.exports = {
     index,
+    new: newFlight,
 }
 
 async function index(req, res) {
@@ -16,4 +17,8 @@ async function index(req, res) {
             errorMsg: err.message,
         })
     }
+}
+
+function newFlight(req, res) {
+    res.render("flights/new", {errorMsg: "", title: "New Flight"})
 }
