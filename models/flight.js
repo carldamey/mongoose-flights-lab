@@ -9,8 +9,8 @@ const flightSchema = new Schema({
     },
     airport: {
         type: String,
-        enum: ["AUS", "DFW", "DEN", "LAX", "SAN", "SEA"],
         default: "SEA",
+        enum: ["AUS", "DFW", "DEN", "LAX", "SAN", "SEA"],
     },
     flightNo: {
         type: Number,
