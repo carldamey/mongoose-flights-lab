@@ -2,7 +2,7 @@ var express = require("express")
 var router = express.Router()
 
 router.get("/", function (req, res, next) {
-  res.redirect("/flights", {}, {title: "All Flights"})
+  res.redirect("/flights", {}, { title: "All Flights" })
 })
 
 module.exports = router
