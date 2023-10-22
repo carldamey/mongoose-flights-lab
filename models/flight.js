@@ -26,6 +26,9 @@ const flightSchema = new Schema(
         return currentDate
       },
     },
+    destinations: {
+        type: [destinationSchema]
+    }
   },
   {
     timestamps: true,
