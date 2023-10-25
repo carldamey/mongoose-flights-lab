@@ -1,11 +1,12 @@
 <%- include("../partials/header") %>
 
 <section id="show-page">
+    <h1>Flight <%=flight.flightNo %></h1>
     <div>Airline: <%= flight.airline %></div>
-    <div>Departing From: <%= flight.airport %> </div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div>Departing From: <%= flight.airport %> on <%= flight.departs.toDateString() %></div>
+    <% if (flight.destinations.airport) { %>
+    <div>Arriving at <%= flight.destinations.airport %> on <%= flight.departs.toDateString() %></div>
+    <% } %>
 </section>
 
 <%- include("../partials/footer") %>
