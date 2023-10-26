@@ -5,6 +5,7 @@ module.exports = {
   new: newFlight,
   create,
   show,
+  update,
 }
 
 async function index(req, res) {
@@ -26,7 +27,6 @@ function newFlight(req, res) {
 }
 
 async function create(req, res) {
-  console.log("create called")
   try {
     if (!req.body.airline) req.body.airline = undefined
     if (!req.body.airport) req.body.airport = undefined
@@ -45,4 +45,9 @@ async function create(req, res) {
 async function show(req, res) {
   const flight = await Flight.findById(req.params.id)
   res.render("flights/show", {title: `Flight ${flight.flightNo} - Details`, flight})
+}
+
+async function update(req, res) {
+  const filter = {_id: req.params._id}
+  const update = {}
 }

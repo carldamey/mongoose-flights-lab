@@ -1,11 +1,32 @@
 <%- include("../partials/header") %>
 
 <section id="show-page">
-    <h1>Flight <%=flight.flightNo %></h1>
+    <h1>Flight <%= flight.flightNo %></h1><hr>
     <div>Airline: <%= flight.airline %></div>
-    <div>Departing From: <%= flight.airport %> on <%= flight.departs.toDateString() %></div>
-    <% if (flight.destinations.airport) { %>
-    <div>Arriving at <%= flight.destinations.airport %> on <%= flight.departs.toDateString() %></div>
+    <div>Departing From: <%= flight.airport %> on <%= flight.departs.toLocaleDateString() %> at <%= flight.departs.toLocaleTimeString() %></div>
+
+    <% if (flight.arrivals.length) { %>
+    <div>Arriving at <%= flight.arrivals[0].airport %> on <%= flight.arrivals[0].arrival.toLocaleDateString() %> at <%= flight.arrivals[0].arrival.toLocaleTimeString() %></div>
+    <% } else { %>
+
+        <h2>Add Arrival</h2>
+        <form 
+            id="add-arrival-form"
+            action="/flights/<%= flight.id %>/arrivals"
+            method="POST">
+            <label>Time of arrival: <input name="arrival" type="datetime-local"></label><br>
+            Airport: <select name="airport">
+                    <option value="SEA">SEA</option>
+                    <option value="AUS">AUS</option>
+                    <option value="DFW">DFW</option>
+                    <option value="DEN">DEN</option>
+                    <option value="SAN">SAN</option>
+                    <option value="LAX">LAX</option>
+                </select><br>
+            </label>
+            <input type="submit" value="Update Flight"/>
+        </form>
+        
     <% } %>
 </section>
 

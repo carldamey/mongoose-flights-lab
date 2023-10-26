@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
-const destinationSchema = new Schema(
+const arrivalSchema = new Schema(
   {
     airport: {
       type: String,
@@ -36,8 +36,8 @@ const flightSchema = new Schema(
         return currentDate
       },
     },
-    destinations: {
-        type: [destinationSchema]
+    arrivals: {
+        type: [arrivalSchema]
     }
   },
   {

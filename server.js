@@ -9,6 +9,7 @@ require("./config/database")
 
 var indexRouter = require("./routes/index")
 var flightsRouter = require("./routes/flights")
+var arrivalsRouter = require("./routes/arrivals")
 
 var app = express()
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
 
+app.use("/", arrivalsRouter)
 app.use("/", indexRouter)
 app.use("/flights", flightsRouter)
 
