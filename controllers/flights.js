@@ -46,13 +46,13 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     const flight = await Flight.findById(req.params.id)
-    const tickets = await Ticket.find({flight: flight._id})
+    const tickets = await Ticket.find({ flight: flight._id })
     res.render("flights/show", {
       title: `${flight.flightNo} - Details`,
       flight,
-      tickets
+      tickets,
     })
-  } catch(err) {
+  } catch (err) {
     console.error(err)
   }
 }

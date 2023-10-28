@@ -31,7 +31,7 @@
         <h2>Tickets:</h2>
     <ul>
         <% tickets.forEach(ticket => { %>
-          <li> <%= ticket.seat %> - <small><%= ticket.price %></small></li>  
+          <li> <%= ticket.seat %> - <small>$<%= ticket.price.toFixed(2) %></small></li>  
             
         <% }) %>
     </ul>
