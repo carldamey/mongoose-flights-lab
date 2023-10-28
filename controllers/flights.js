@@ -1,5 +1,5 @@
-const Flight = require("../models/flight")
-const Ticket = require("../models/ticket")
+var Flight = require("../models/flight")
+var Ticket = require("../models/ticket")
 
 module.exports = {
   index,
