@@ -5,14 +5,14 @@ const ticketSchema = new Schema(
     {
         seat: {
             type: String,
-            validate: /[A-F]\d{1,5}/,
+            match: /[A-F]\d{1,2}/,
         },
         price: {
             type: Number,
             min: 0,
         },
         flight: {
-            type: ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "Flight"
         },
     },
