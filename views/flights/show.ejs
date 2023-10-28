@@ -28,6 +28,14 @@
         </form>
         
     <% } %>
+        <h2>Tickets:</h2>
+    <ul>
+        <% tickets.forEach(ticket => { %>
+          <li> <%= ticket.seat %> - <small><%= ticket.price %></small></li>  
+            
+        <% }) %>
+    </ul>
+    <a href="/tickets/new">New Ticket</a>
 </section>
 
 <%- include("../partials/footer") %>
