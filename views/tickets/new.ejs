@@ -1,6 +1,15 @@
 <%- include("../partials/header") %>
 
 <h2>Add A Ticket:</h2>
-
+<form action="/tickets" method="POST">
+  <label
+    >Seat:
+    <input name="seat" type="text" required pattern="[A-F]\d{1,2}" placeholder="e.g. B14" />
+  </label><br><br>
+  <label>Price: 
+    <input name="price" type="number" step=".01" >
+  </label>
+  <button type="submit">Add Ticket</button>
+</form>
 
 <%- include("../partials/footer") %>
